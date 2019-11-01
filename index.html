@@ -132,8 +132,50 @@
         </div>
     </section>
 
+    <section id="gtco-gallery" data-section="gallery">
+        <div class="container">
+            <div class="row row-pb-md" style="padding-bottom: 0!important; margin-bottom: 20px!important;">
+                <div class="col-md-8 col-md-offset-2 heading animate-box" data-animate-effect="fadeIn">
+                    <h1>Galería</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 animate-box">
+                    <div class="container-gallery">
+                        <div class="container__img-holder">
+                            <img src="images/img1.jpeg" alt="Image">
+                        </div>
+                        <div class="container__img-holder">
+                            <img src="images/img2.jpeg" alt="Image">
+                        </div>
+                        <div class="container__img-holder">
+                            <img src="images/img3.jpeg" alt="Image">
+                        </div>
+                        <div class="container__img-holder">
+                            <img src="images/img4.jpeg" alt="Image">
+                        </div>
+                        <div class="container__img-holder">
+                            <img src="images/img5.jpeg" alt="Image">
+                        </div>
+                        <div class="container__img-holder">
+                            <img src="images/img6.jpeg" alt="Image">
+                        </div>
+                    </div>
 
-    <section id="gtco-our-team" data-section="our-team">
+                    <div class="img-popup">
+                        <img src="" alt="Popup Image">
+                        <div class="close-btn">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="gtco-our-team" data-section="our-team" style="z-index: 0">
         <div class="container">
             <div class="row row-pb-md">
                 <div class="col-md-8 col-md-offset-2 heading animate-box" data-animate-effect="fadeIn">
@@ -176,8 +218,8 @@
                             <input type="text" class="form-control" placeholder="Nombre" id="name">
                         </div>
                         <div class="form-group">
-                            <label for="email" class="sr-only">Correo Electrónico</label>
-                            <input type="text" class="form-control" placeholder="Correo Electrónico" id="email">
+                            <label for="contact-email" class="sr-only">Correo Electrónico</label>
+                            <input type="text" class="form-control" placeholder="Correo Electrónico" id="contact-email">
                         </div>
                         <div class="form-group">
                             <label for="message" class="sr-only">Mensaje</label>
@@ -185,7 +227,7 @@
                                       placeholder="Mensaje"></textarea>
                         </div>
                         <div class="form-group">
-                            <input type="submit" value="Enviar Mensaje" class="btn btn-primary">
+                            <button type="submit" class="btn btn-primary b-plan" onClick="SendMail()">Enviar</button>
                         </div>
                     </form>
                 </div>

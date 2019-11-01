@@ -332,5 +332,92 @@
 		loaderPage();
 	});
 
+	$(document).ready(function() {
+
+		// required elements
+		var imgPopup = $('.img-popup');
+		var imgCont  = $('.container__img-holder');
+		var popupImage = $('.img-popup img');
+		var closeBtn = $('.close-btn');
+
+		// handle events
+		imgCont.on('click', function() {
+			var img_src = $(this).children('img').attr('src');
+			imgPopup.children('img').attr('src', img_src);
+			imgPopup.addClass('opened');
+		});
+
+		$(imgPopup, closeBtn).on('click', function() {
+			imgPopup.removeClass('opened');
+			imgPopup.children('img').attr('src', '');
+		});
+
+		popupImage.on('click', function(e) {
+			e.stopPropagation();
+		});
+
+	});
+
+	var SendMail = function () {
+
+		var emailVal = jQuery('#contact-email').val();
+
+		if (isValidEmailAddress(emailVal)) {
+			var params = {
+				'action': 'SendMessage',
+				'name': jQuery('#name').val(),
+				'email': jQuery('#contact-email').val(),
+				'subject': jQuery('#subject').val(),
+				'message': jQuery('#message').val()
+			};
+			jQuery.ajax({
+				type: "POST",
+				url: "php/sendMail.php",
+				data: params,
+				success: function (response) {
+					if (response) {
+						var responseObj = jQuery.parseJSON(response);
+						if (responseObj.ResponseData)
+						{
+							alert(responseObj.ResponseData);
+						}
+					}
+				},
+				error: function (xhr, ajaxOptions, thrownError) {
+					//xhr.status : 404, 303, 501...
+					var error = null;
+					switch (xhr.status)
+					{
+						case "301":
+							error = "Redirection Error!";
+							break;
+						case "307":
+							error = "Error, temporary server redirection!";
+							break;
+						case "400":
+							error = "Bad request!";
+							break;
+						case "404":
+							error = "Page not found!";
+							break;
+						case "500":
+							error = "Server is currently unavailable!";
+							break;
+						default:
+							error = "Unespected error, please try again later.";
+					}
+					if (error) {
+						alert(error);
+					}
+				}
+			});
+		} else
+		{
+			alert('Su email no tiene un formato válido');
+		}
+	};
+
+
 
 }());
+
