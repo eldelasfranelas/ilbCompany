@@ -781,9 +781,10 @@ form label {
 .gtco-cover .display-tc {
   display: table-cell !important;
   vertical-align: middle;
+
 }
 .display-tc img{
-  max-width: 100%;
+  max-width: 100%
 }
 #gtco-header .display-tc h1, #gtco-header .display-tc h2,
 .gtco-cover .display-tc h1,
