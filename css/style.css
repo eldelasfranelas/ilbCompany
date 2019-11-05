@@ -603,7 +603,7 @@ h1, h2, h3, h4, h5, h6, figure {
 #gtco-our-team .gtco-team .img-shadow {
   position: relative;
   background: #C4A76E;
-  width: 100%;
+  width: 80%!important;
   float: left;
   margin-bottom: 30px;
 }
@@ -612,6 +612,7 @@ h1, h2, h3, h4, h5, h6, figure {
   position: relative;
   top: -20px;
   right: -20px;
+  width: 100%;
 }
 #gtco-our-team .gtco-team .img-shadow img {
   top: -20px;
@@ -1347,8 +1348,9 @@ img {
 .img-gallery img{
   border-radius: 2px;
   margin: 5px 0;
+  max-width: 100%;
 }
-@media (max-width: 900px) {
+@media (max-width: 991px) {
   .img-gallery{
     display: flex;
     justify-content: center;
